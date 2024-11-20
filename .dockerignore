@@ -1,0 +1,17 @@
+*.sublime-*
+.aws
+.DS_Store
+.jenkins-config
+.env*
+.haxelib
+/build.hxml
+build
+**/node_modules
+serverconfig.yaml
+ccc.yaml
+tmp/
+results/
+data/
+
+#REMOVE THIS WHEN WORKING
+#./etc/log
