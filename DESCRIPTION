@@ -1,0 +1,10 @@
+Package: googleapis
+Title: Client to Google APIs
+Version: 0.0.0.1
+Authors@R: person("Michael", "Kearney", email = "kearneymw@missouri.edu", role = c("aut", "cre"))
+Description: Interacts with Google cloud APIs.
+Depends: R (>= 3.4.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
