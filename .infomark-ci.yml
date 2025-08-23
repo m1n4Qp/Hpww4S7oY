@@ -1,0 +1,84 @@
+server:
+  version: 1
+  debugging:
+    enabled: false
+    user_id: 1
+    user_is_root: false
+    log_level: debug
+    fixtures: /home/runner/work/infomark/infomark/files/fixtures
+  http:
+    use_https: false
+    port: 3000
+    domain: sub.domain.com
+    timeouts:
+      read: 30s
+      write: 30s
+    limits:
+      max_header: 1mb
+      max_request_json: 2mb
+      max_submission: 4mb
+      max_avatar: 1mb
+  distribute_jobs: true
+  authentication:
+    email:
+      verify: true
+    jwt:
+      secret: 4b86a7b05
+      access_expiry: 15m0s
+      refresh_expiry: 10h0m0s
+    session:
+      secret: d28a1b649f
+      cookies:
+        secure: false
+        lifetime: 24h0m0s
+        idle_timeout: 1h0m0s
+    password:
+      min_length: 7
+    total_requests_per_minute: 10
+  cronjobs:
+    zip_submissions_intervall: 5m0s
+  email:
+    send: false
+    sendmail_binary: /usr/sbin/sendmail
+    from: no-reply@sub.domain.com
+    channel_size: 300
+  services:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+    # prometheus:
+    #   user: prometheus_user
+    #   password: prometheus_password
+    rabbit_mq:
+      host: localhost
+      port: 5672
+      user: rabbitmq_user
+      password: rabbitmq_pass
+      key: rabbitmq_key
+    database:
+      host: localhost
+      port: 5432
+      database: db_name
+      user: db_user
+      password: db_pass
+      debug: false
+  paths:
+    uploads: /home/runner/work/infomark/infomark/files/uploads
+    common: /home/runner/work/infomark/infomark/files/common
+    generated_files: /home/runner/work/infomark/infomark/files/generated_files
+# worker:
+#   version: 1
+#   services:
+#     rabbit_mq:
+#       host: localhost
+#       port: 5672
+#       user: rabbitmq_user
+#       password: password
+#       key: rabbitmq_key
+#   workdir: /tmp
+#   void: false
+#   docker:
+#     max_memory: 500mb
+#     timeout: 5m0s
+#
